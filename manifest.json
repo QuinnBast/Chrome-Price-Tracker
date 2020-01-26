@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Price Tracker",
+    "version": "1.0",
+    "description": "A price tracking application that allows subscribing to watch for price drops on shopping sites.",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["pageListener.js"]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
